@@ -1,5 +1,5 @@
-const {Room} = require("./room");
 
+const {Food}=require('./food');
 
 
 class Player {
@@ -70,7 +70,8 @@ class Player {
 
     eatItem(itemName) {
         // Fill this in
-        
+        let item=this.getItemByName(itemName);
+        if(item instanceof Food){
         let index;
         this.items.forEach((element,i) => {
             if(element.name===itemName){
@@ -78,6 +79,7 @@ class Player {
             }
         });
         this.items.splice(index,1);
+    }
 
     }
 
